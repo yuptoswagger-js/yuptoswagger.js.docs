@@ -1,0 +1,13 @@
+{
+  "ignoreFiles": [
+    "assets/css/yuptoswagger-js-default.scss",
+    "assets/css/yuptoswagger-js-light.scss",
+    "assets/css/yuptoswagger-js-dark.scss",
+    "_sass/vendor/**/*.scss"
+  ],
+  "extends": ["stylelint-config-primer", "stylelint-config-prettier"],
+  "plugins": ["stylelint-prettier"],
+  "rules": {
+    "prettier/prettier": true
+  }
+}
