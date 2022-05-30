@@ -9,7 +9,7 @@ permalink: /
 # yuptoswagger.js 
 {: .fs-7 }
 
-[Get started now](#getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 } [View it on GitHub](https://github.com/yuptoswagger-js/yuptoswagger.js){: .btn .fs-5 .mb-4 .mb-md-0 }
+[Get started now](#getting-started){: .btn .btn-primary .fs-4 .mb-4 .mb-md-0 .mr-2 } [View it on GitHub](https://github.com/yuptoswagger-js/yuptoswagger.js){: .btn .fs-4 .mb-4 .mb-md-0 }
 
 ---
 
@@ -23,6 +23,11 @@ yuptoswagger.js is built for [Jekyll](https://jekyllrb.com), a static site gener
 
 ```shell
 $ npm install yuptoswagger.js
+```
+### Quick start: Using yarn
+
+```shell
+$ yarn add yuptoswagger.js
 ```
 
 ### yuptoswagger.js in action
