@@ -9,7 +9,6 @@ permalink: /
 # yuptoswagger.js 
 
 [Get started now](#getting-started)
-[View it on GitHub](https://github.com/yuptoswagger-js/yuptoswagger.js)
 
 ---
 
