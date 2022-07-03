@@ -1,85 +1,99 @@
-<p align="right">
-    <a href="https://badge.fury.io/rb/yuptoswagger-js"><img src="https://badge.fury.io/rb/yuptoswagger-js.svg" alt="Gem version"></a> <a href="https://github.com/yuptoswagger-js/yuptoswagger.js/actions?query=workflow%3A%22main+branch+CI%22"><img src="https://github.com/yuptoswagger-js/yuptoswagger.js/workflows/main%20branch%20CI/badge.svg" alt="Build status"></a>
-</p>
-<br><br>
-<p align="center">
-    <h1 align="center">yuptoswagger.js</h1>
-    <p align="center">A modern, highly customizable, and responsive Jekyll theme for documentation with built-in search.<br>Easily hosted on GitHub Pages with few dependencies.</p>
-    <p align="center"><strong><a href="https://yuptoswagger-js.github.io/yuptoswagger-js/">See it in action!</a></strong></p>
-    <br><br><br>
-</p>
+---
+layout: default
+title: Home
+nav_order: 1
+description: "yuptoswagger.js is a responsive Jekyll theme with built-in search that is easily customizable and hosted on GitHub Pages."
+permalink: /
+---
 
-![jtd](https://user-images.githubusercontent.com/896475/47384541-89053c80-d6d5-11e8-98dc-dba16e192de9.gif)
+# yuptoswagger.js 
+{: .fs-7 }
 
-## Installation
+[Get started now](#getting-started){: .btn .btn-primary .fs-4 .mb-4 .mb-md-0 .mr-2 } [View it on GitHub](https://github.com/yuptoswagger-js/yuptoswagger.js){: .btn .fs-4 .mb-4 .mb-md-0 }
 
-### via GitHub Pages remote theme
+---
 
-The quickiest way to use yuptoswagger.js is to use GitHub pages [remote theme](https://blog.github.com/2017-11-29-use-any-theme-with-github-pages/) feature in your `config.yml` file:
+## Getting started
+<!-- 
+### Dependencies
 
-```yaml
-remote_theme: yuptoswagger-js/yuptoswagger-js
+yuptoswagger.js is built for [Jekyll](https://jekyllrb.com), a static site generator. View the [quick start guide](https://jekyllrb.com/docs/) for more information. yuptoswagger.js requires no special plugins and can run on GitHub Pages' standard Jekyll compiler. The [Jekyll SEO Tag plugin](https://github.com/jekyll/jekyll-seo-tag) is included by default (no need to run any special installation) to inject SEO and open graph metadata on docs pages. For information on how to configure SEO and open graph metadata visit the [Jekyll SEO Tag usage guide](https://jekyll.github.io/jekyll-seo-tag/usage/). -->
+
+### Quick start: Using npm
+
+```shell
+$ npm install yuptoswagger.js
 ```
-### via RubyGems:
+### Quick start: Using yarn
 
-Alternatively you can install it as a Ruby Gem.
-
-Add this line to your Jekyll site's Gemfile:
-
-```ruby
-gem "yuptoswagger-js"
-```
-
-And add this line to your Jekyll site's `_config.yml`:
-
-```yaml
-theme: yuptoswagger-js
+```shell
+$ yarn add yuptoswagger.js
 ```
 
-And then execute:
+### yuptoswagger.js in action
 
-    $ bundle
+```js
+import * as yup from "yup";
+import Compiler from "yuptoswagger.js";
 
-Or install it yourself as:
+// Initialize compiler
+const options = {
+  debug: true
+}
+const compiler = new Compiler(options);
 
-    $ gem install yuptoswagger-js
+const schema = yup.object().shape({
+  first_name: yup.string().min(2).required(),
+  last_name: yup.string().min(2).required(),
+  email: yup.string().email().required(),
+  password: yup.string().min(8).required(),
+})
+const swagger = compiler.compile(schema);
+```
+## Output:
+```js
+{
+  type: 'object',
+  fields: [
+    { type: 'string', enum: [], minLength: 2 },
+    { type: 'string', enum: [], minLength: 2 },
+    { type: 'string', enum: [], format: 'email' },
+    { type: 'string', enum: [], minLength: 8 }
+  ]
+}
+```
 
-Alternatively, you can run it inside Docker while developing your site
+### Configure yuptoswagger.js
 
-    $ docker-compose up
+- [See configuration options]({% link docs/configuration.md %})
 
-## Usage
+---
 
-[View the documentation](https://yuptoswagger-js.github.io/yuptoswagger-js/) for usage information.
+## About the project
 
-## Contributing
+yuptoswagger.js is &copy; 2017-{{ "now" | date: "%Y" }} by [Gjergj Kadriu](http://gjergjkadriu.com).
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/yuptoswagger-js/yuptoswagger.js. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+### License
 
-### Submitting code changes:
+yuptoswagger.js is distributed by an [MIT license](https://github.com/yuptoswagger-js/yuptoswagger.js/tree/main/LICENSE.txt).
 
-- Open a [Pull Request](https://github.com/yuptoswagger-js/yuptoswagger.js/pulls)
-- Ensure all CI tests pass
-- Await code review
-- Bump the version number in `yuptoswagger-js.gemspec` and `package.json` according to [semantic versioning](https://semver.org/).
+### Contributing
 
-### Design and development principles of this theme:
+When contributing to this repository, please first discuss the change you wish to make via issue,
+email, or any other method with the owners of this repository before making a change. Read more about becoming a contributor in [our GitHub repo](https://github.com/yuptoswagger-js/yuptoswagger.js#contributing).
 
-1. As few dependencies as possible
-2. No build script needed
-3. First class mobile experience
-4. Make the content shine
+#### Thank you to the contributors of yuptoswagger.js!
 
-## Development
+<ul class="list-style-none">
+{% for contributor in site.github.contributors %}
+  <li class="d-inline-block mr-1">
+     <a href="{{ contributor.html_url }}"><img src="{{ contributor.avatar_url }}" width="32" height="32" alt="{{ contributor.login }}"/></a>
+  </li>
+{% endfor %}
+</ul>
 
-To set up your environment to develop this theme, run `bundle install`.
+### Code of Conduct
 
-A modern [devcontainer configuration](https://code.visualstudio.com/docs/remote/containers) for VSCode is included.
+yuptoswagger.js is committed to fostering a welcoming community.
 
-Your theme is set up just like a normal Jekyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
-
-When the theme is released, only the files in `_layouts`, `_includes`, and `_sass` tracked with Git will be released.
-
-## License
-
-The theme is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+[View our Code of Conduct](https://github.com/yuptoswagger-js/yuptoswagger.js/tree/main/CODE_OF_CONDUCT.md) on our GitHub repository.
