@@ -7,9 +7,9 @@ permalink: /
 ---
 
 # yuptoswagger.js 
-{: .fs-7 }
 
-[Get started now](#getting-started){: .btn .btn-primary .fs-4 .mb-4 .mb-md-0 .mr-2 } [View it on GitHub](https://github.com/yuptoswagger-js/yuptoswagger.js){: .btn .fs-4 .mb-4 .mb-md-0 }
+[Get started now](#getting-started)
+[View it on GitHub](https://github.com/yuptoswagger-js/yuptoswagger.js)
 
 ---
 
@@ -65,13 +65,13 @@ const swagger = compiler.compile(schema);
 
 ### Configure yuptoswagger.js
 
-- [See configuration options]({% link docs/configuration.md %})
+- <a href="#docs/configuration.md">[See configuration options]</a>
 
 ---
 
 ## About the project
 
-yuptoswagger.js is &copy; 2017-{{ "now" | date: "%Y" }} by [Gjergj Kadriu](http://gjergjkadriu.com).
+yuptoswagger.js is &copy; 2022 by [Gjergj Kadriu](http://gjergjkadriu.com).
 
 ### License
 
@@ -82,15 +82,14 @@ yuptoswagger.js is distributed by an [MIT license](https://github.com/yuptoswagg
 When contributing to this repository, please first discuss the change you wish to make via issue,
 email, or any other method with the owners of this repository before making a change. Read more about becoming a contributor in [our GitHub repo](https://github.com/yuptoswagger-js/yuptoswagger.js#contributing).
 
-#### Thank you to the contributors of yuptoswagger.js!
+<!-- #### Thank you to the contributors of yuptoswagger.js!
 
 <ul class="list-style-none">
-{% for contributor in site.github.contributors %}
   <li class="d-inline-block mr-1">
      <a href="{{ contributor.html_url }}"><img src="{{ contributor.avatar_url }}" width="32" height="32" alt="{{ contributor.login }}"/></a>
   </li>
 {% endfor %}
-</ul>
+</ul> -->
 
 ### Code of Conduct
 
