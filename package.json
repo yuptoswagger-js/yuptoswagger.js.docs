@@ -21,6 +21,6 @@
     "serve": "bundle exec jekyll serve"
   },
   "dependencies": {
-    "acorn": "^8.7.1"
+    "acorn": "^8.8.1"
   }
 }
